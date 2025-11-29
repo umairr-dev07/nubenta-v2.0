@@ -30,10 +30,10 @@ const Home: React.FC = () => {
           </h1>
           
           <p className="max-w-3xl mx-auto text-lg md:text-2xl text-slate-300 mb-12 leading-relaxed font-light font-body">
-            Stop trading time for money. The workforce of tomorrow is here today. 
-            <strong>Beeba</strong> creates your content strategy. <strong>Genie</strong> closes your sales.
+            NUBENTA builds advanced AI agents that revolutionize how you connect, sell, and support. Meet your new workforce. 
+            {/* <strong>Beeba</strong> creates your content strategy. <strong>Genie</strong> closes your sales.
             <br />
-            <span className="text-white font-semibold block mt-4">Scale Without Limits.</span>
+            <span className="text-white font-semibold block mt-4">Scale Without Limits.</span> */}
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -236,15 +236,6 @@ const Home: React.FC = () => {
                 <ProductCard product={product} showPrice={false} pricingMode={false} />
               </div>
             ))}
-          </div>
-          
-          <div className="mt-20 text-center">
-            <h3 className="text-2xl font-bold text-white mb-8">Ready to transform your business?</h3>
-            <NavLink to="/book-demo">
-               <Button variant="primary" glowColor="blue" className="!px-12 !py-4">
-                 Book a Demo Now
-               </Button>
-            </NavLink>
           </div>
         </div>
       </section>
