@@ -6,7 +6,6 @@ import CursorTrail from './components/CursorTrail';
 import Home from './pages/Home';
 import Pricing from './pages/Pricing';
 import About from './pages/About';
-import Contact from './pages/Contact';
 import BookDemo from './pages/BookDemo';
 
 // Scroll to top wrapper
@@ -30,7 +29,6 @@ const App: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
             <Route path="/book-demo" element={<BookDemo />} />
           </Routes>
         </main>

@@ -4,7 +4,6 @@ import { Product, NavItem, Company } from './types';
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Home', path: '/' },
   { label: 'Products', path: '/pricing' },
-  { label: 'Get in Touch', path: '/contact' },
   { label: 'About Us', path: '/about' },
 ];
 

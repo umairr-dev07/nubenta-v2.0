@@ -1,6 +1,6 @@
 import React from 'react';
 import ContactForm from '../components/ContactForm';
-import { Calendar, Users } from 'lucide-react';
+import { Calendar, Users, Phone, Mail } from 'lucide-react';
 
 const BookDemo: React.FC = () => {
   return (
@@ -23,9 +23,33 @@ const BookDemo: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left Side: Benefits */}
-          <div className="space-y-8 order-2 lg:order-1">
+          <div className="space-y-6 order-2 lg:order-1">
+             <div className="bg-slate-900/50 backdrop-blur-md p-6 rounded-2xl border border-white/10 flex gap-4 items-start">
+                <div className="p-3 bg-cyan-900/30 rounded-lg text-cyan-400">
+                    <Phone className="w-6 h-6" />
+                </div>
+                <div>
+                    <h3 className="text-xl font-bold text-white mb-2">Call Us</h3>
+                    <a href="tel:+1234567890" className="text-slate-400 hover:text-cyan-400 transition-colors">
+                      +1 (234) 567-890
+                    </a>
+                </div>
+             </div>
+
+             <div className="bg-slate-900/50 backdrop-blur-md p-6 rounded-2xl border border-white/10 flex gap-4 items-start">
+                <div className="p-3 bg-emerald-900/30 rounded-lg text-emerald-400">
+                    <Mail className="w-6 h-6" />
+                </div>
+                <div>
+                    <h3 className="text-xl font-bold text-white mb-2">Email Us</h3>
+                    <a href="mailto:info@nubenta.com" className="text-slate-400 hover:text-emerald-400 transition-colors">
+                      info@nubenta.com
+                    </a>
+                </div>
+             </div>
+             
              <div className="bg-slate-900/50 backdrop-blur-md p-6 rounded-2xl border border-white/10 flex gap-4 items-start">
                 <div className="p-3 bg-purple-900/30 rounded-lg text-purple-400">
                     <Calendar className="w-6 h-6" />

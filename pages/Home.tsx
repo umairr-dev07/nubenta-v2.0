@@ -10,6 +10,21 @@ const Home: React.FC = () => {
     <div className="flex flex-col min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-[#0a0a0f] to-black">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        {/* Video Background - Full Screen */}
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover opacity-30"
+          >
+            <source src="/ai-character.mp4" type="video/mp4" />
+          </video>
+          {/* Gradient Overlay to blend video with design */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
+        </div>
+
         {/* Consistent Tech Background Overlay */}
         <div className="absolute inset-0 bg-grid-pattern opacity-30 z-0 pointer-events-none" />
 

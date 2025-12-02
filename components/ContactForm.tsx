@@ -17,10 +17,14 @@ const ContactForm: React.FC<ContactFormProps> = ({
     name: '',
     businessName: '',
     email: '',
-    phone: ''
+    phone: '',
+    agentInterest: '',
+    date: '',
+    time: '',
+    struggles: ''
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -31,9 +35,36 @@ const ContactForm: React.FC<ContactFormProps> = ({
     // Simulate API call
     setTimeout(() => {
       setStatus(FormStatus.SUCCESS);
-      setFormData({ name: '', businessName: '', email: '', phone: '' });
+      setFormData({ name: '', businessName: '', email: '', phone: '', agentInterest: '', date: '', time: '', struggles: '' });
       // Removed the timeout that resets status to IDLE, so the message persists
     }, 1500);
+  };
+
+  // Generate time slots (9 AM to 5 PM in 30-minute intervals)
+  const generateTimeSlots = () => {
+    const slots = [];
+    for (let hour = 9; hour <= 17; hour++) {
+      for (let minute = 0; minute < 60; minute += 30) {
+        if (hour === 17 && minute > 0) break; // Stop at 5:00 PM
+        const period = hour >= 12 ? 'PM' : 'AM';
+        const displayHour = hour > 12 ? hour - 12 : hour;
+        const displayMinute = minute.toString().padStart(2, '0');
+        const value = `${hour.toString().padStart(2, '0')}:${displayMinute}`;
+        slots.push({
+          value,
+          label: `${displayHour}:${displayMinute} ${period}`
+        });
+      }
+    }
+    return slots;
+  };
+
+  const timeSlots = generateTimeSlots();
+
+  // Get minimum date (today)
+  const getMinDate = () => {
+    const today = new Date();
+    return today.toISOString().split('T')[0];
   };
 
   return (
@@ -106,6 +137,72 @@ const ContactForm: React.FC<ContactFormProps> = ({
                 onChange={handleChange}
                 className="w-full bg-slate-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors"
                 placeholder="+1 (555) 000-0000"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="agentInterest" className="block text-sm font-medium text-slate-400 mb-1">Which AI Agent Do You Want to Explore?</label>
+              <select
+                id="agentInterest"
+                name="agentInterest"
+                required
+                value={formData.agentInterest}
+                onChange={handleChange}
+                className="w-full bg-slate-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors"
+              >
+                <option value="" disabled>Select an option</option>
+                <option value="beeba">Beeba</option>
+                <option value="genie">Genie</option>
+                <option value="both">Both</option>
+              </select>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="date" className="block text-sm font-medium text-slate-400 mb-1">Preferred Date</label>
+                <input
+                  type="date"
+                  id="date"
+                  name="date"
+                  required
+                  min={getMinDate()}
+                  value={formData.date}
+                  onChange={handleChange}
+                  className="w-full bg-slate-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="time" className="block text-sm font-medium text-slate-400 mb-1">Preferred Time</label>
+                <select
+                  id="time"
+                  name="time"
+                  required
+                  value={formData.time}
+                  onChange={handleChange}
+                  className="w-full bg-slate-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors"
+                >
+                  <option value="" disabled>Select time</option>
+                  {timeSlots.map((slot) => (
+                    <option key={slot.value} value={slot.value}>
+                      {slot.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="struggles" className="block text-sm font-medium text-slate-400 mb-1">What Are You Currently Struggling With?</label>
+              <textarea
+                id="struggles"
+                name="struggles"
+                required
+                value={formData.struggles}
+                onChange={handleChange}
+                rows={4}
+                className="w-full bg-slate-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors resize-none"
+                placeholder="Tell us about your current challenges..."
               />
             </div>
 
