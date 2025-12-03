@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from './Button';
 import { FormStatus } from '../types';
-import { Check } from 'lucide-react';
+import { Check, AlertCircle } from 'lucide-react';
 
 interface ContactFormProps {
   formTitle?: string;
@@ -10,9 +10,10 @@ interface ContactFormProps {
 
 const ContactForm: React.FC<ContactFormProps> = ({ 
   formTitle = "Book a Live Demo",
-  successMessage = "We received your application. We will connect with you as soon as possible."
+  successMessage = "We have received your application. Our team will connect you as soon as possible."
 }) => {
   const [status, setStatus] = useState<FormStatus>(FormStatus.IDLE);
+  const [errorMessage, setErrorMessage] = useState<string>('');
   const [formData, setFormData] = useState({
     name: '',
     businessName: '',
@@ -24,20 +25,52 @@ const ContactForm: React.FC<ContactFormProps> = ({
     struggles: ''
   });
 
+  // REPLACE THIS URL with your Google Apps Script web app URL
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwBf5NPW6hQ7nUu_wBYUKtX3eSHE7oan2oJMT3uHSNXEaxunWpXC0XQjAMLFA9DcFbjIg/exec';
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus(FormStatus.SUBMITTING);
+    setErrorMessage('');
 
-    // Simulate API call
-    setTimeout(() => {
+    console.log('Submitting form data:', formData);
+    console.log('Sending to URL:', GOOGLE_SCRIPT_URL);
+
+    try {
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        mode: 'no-cors',
+      });
+
+      console.log('Form submitted successfully');
+      
+      // Wait a bit to ensure the data is processed
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
       setStatus(FormStatus.SUCCESS);
-      setFormData({ name: '', businessName: '', email: '', phone: '', agentInterest: '', date: '', time: '', struggles: '' });
-      // Removed the timeout that resets status to IDLE, so the message persists
-    }, 1500);
+      setFormData({ 
+        name: '', 
+        businessName: '', 
+        email: '', 
+        phone: '', 
+        agentInterest: '', 
+        date: '', 
+        time: '', 
+        struggles: '' 
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setErrorMessage('There was an error submitting the form. Please try again.');
+      setStatus(FormStatus.IDLE);
+    }
   };
 
   // Generate time slots (9 AM to 5 PM in 30-minute intervals)
@@ -45,7 +78,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
     const slots = [];
     for (let hour = 9; hour <= 17; hour++) {
       for (let minute = 0; minute < 60; minute += 30) {
-        if (hour === 17 && minute > 0) break; // Stop at 5:00 PM
+        if (hour === 17 && minute > 0) break;
         const period = hour >= 12 ? 'PM' : 'AM';
         const displayHour = hour > 12 ? hour - 12 : hour;
         const displayMinute = minute.toString().padStart(2, '0');
@@ -61,7 +94,6 @@ const ContactForm: React.FC<ContactFormProps> = ({
 
   const timeSlots = generateTimeSlots();
 
-  // Get minimum date (today)
   const getMinDate = () => {
     const today = new Date();
     return today.toISOString().split('T')[0];
@@ -69,7 +101,6 @@ const ContactForm: React.FC<ContactFormProps> = ({
 
   return (
     <div className="w-full max-w-lg mx-auto bg-slate-900/50 backdrop-blur-xl border border-white/10 p-8 rounded-2xl shadow-2xl relative overflow-hidden min-h-[500px] flex flex-col justify-center">
-      {/* Decorative gradient blob inside form */}
       <div className="absolute -top-20 -right-20 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl pointer-events-none" />
       
       {status === FormStatus.SUCCESS ? (
@@ -83,6 +114,14 @@ const ContactForm: React.FC<ContactFormProps> = ({
       ) : (
         <>
           <h3 className="text-2xl font-bold text-white mb-6 text-center">{formTitle}</h3>
+          
+          {errorMessage && (
+            <div className="mb-4 p-4 bg-red-500/10 border border-red-500/20 rounded-lg flex items-start gap-3">
+              <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
+              <p className="text-red-300 text-sm">{errorMessage}</p>
+            </div>
+          )}
+          
           <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-slate-400 mb-1">Full Name</label>
