@@ -1,6 +1,6 @@
 import React from 'react';
 import ContactForm from '../components/ContactForm';
-import { Calendar, Users, Phone, Mail } from 'lucide-react';
+import { Calendar, Users, Phone, Mail, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
 
 const BookDemo: React.FC = () => {
   return (
@@ -67,6 +67,29 @@ const BookDemo: React.FC = () => {
                 <div>
                     <h3 className="text-xl font-bold text-white mb-2">Tailored Walkthrough</h3>
                     <p className="text-slate-400">We don't do generic demos. We'll show you exactly how Beeba or Genie fits your specific business model.</p>
+                </div>
+             </div>
+
+             <div>
+                <h3 className="text-xl font-bold text-white mb-4 text-center">Stay connected with us</h3>
+                <div className="flex justify-center gap-4">
+                    <a href="https://www.facebook.com/profile.php?id=61584223299600" target="_blank" rel="noopener noreferrer" className="p-4 bg-blue-900/30 rounded-lg text-blue-400 hover:bg-blue-900/50 transition-all">
+                        <Facebook className="w-8 h-8" />
+                    </a>
+                    <a href="https://www.instagram.com/nubenta.ai/" target="_blank" rel="noopener noreferrer" className="p-4 bg-pink-900/30 rounded-lg text-pink-400 hover:bg-pink-900/50 transition-all">
+                        <Instagram className="w-8 h-8" />
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="p-4 bg-blue-900/30 rounded-lg text-blue-400 hover:bg-blue-900/50 transition-all">
+                        <Linkedin className="w-8 h-8" />
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="p-4 bg-sky-900/30 rounded-lg text-sky-400 hover:bg-sky-900/50 transition-all">
+                        <Twitter className="w-8 h-8" />
+                    </a>
+                    <a href="https://www.tiktok.com/@nubenta.ai" target="_blank" rel="noopener noreferrer" className="p-4 bg-slate-900/30 rounded-lg text-white hover:bg-slate-900/50 transition-all">
+                        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
+                        </svg>
+                    </a>
                 </div>
              </div>
           </div>

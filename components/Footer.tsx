@@ -9,13 +9,13 @@ const TikTokIcon = ({ size = 24 }) => (
   </svg>
 );
 
-// Mock constants since we don't have access to the actual file
+// Updated social links with actual URLs
 const SOCIAL_LINKS = [
-  { name: 'Facebook', icon: Facebook, url: '#' },
-  { name: 'Instagram', icon: Instagram, url: '#' },
-  { name: 'Twitter', icon: Twitter, url: '#' },
-  { name: 'TikTok', icon: TikTokIcon, url: '#' },
-  { name: 'LinkedIn', icon: Linkedin, url: '#' }
+  { name: 'Facebook', icon: Facebook, url: 'https://www.facebook.com/profile.php?id=61584223299600' },
+  { name: 'Instagram', icon: Instagram, url: 'https://www.instagram.com/nubenta.ai/' },
+  { name: 'Twitter', icon: Twitter, url: 'https://www.twitter.com' },
+  { name: 'TikTok', icon: TikTokIcon, url: 'https://www.tiktok.com/@nubenta.ai' },
+  { name: 'LinkedIn', icon: Linkedin, url: 'https://www.linkedin.com' }
 ];
 
 const Footer = () => {

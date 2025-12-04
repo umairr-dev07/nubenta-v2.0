@@ -60,7 +60,7 @@ const Pricing: React.FC = () => {
                         </ul>
                         
                         <div className="pt-6 flex flex-col sm:flex-row items-center justify-start gap-6">
-                            <span className="text-4xl font-bold text-white">$200<span className="text-lg text-slate-500 font-normal">/mo</span></span>
+                            <span className="text-4xl font-bold text-white">$2000<span className="text-lg text-slate-500 font-normal">/mo</span></span>
                              <NavLink to="/book-demo">
                                 <Button variant="primary" glowColor="purple" className="!px-8 !py-3">
                                     Book Live Demo
@@ -115,7 +115,7 @@ const Pricing: React.FC = () => {
                         </ul>
                         
                          <div className="pt-6 flex flex-col sm:flex-row items-center justify-start gap-6">
-                            <span className="text-4xl font-bold text-white">$200<span className="text-lg text-slate-500 font-normal">/mo</span></span>
+                            <span className="text-4xl font-bold text-white">$2000<span className="text-lg text-slate-500 font-normal">/mo</span></span>
                              <NavLink to="/book-demo">
                                 <Button variant="primary" glowColor="blue" className="!px-8 !py-3">
                                     Book Live Demo
