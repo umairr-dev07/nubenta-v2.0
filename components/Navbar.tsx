@@ -32,15 +32,14 @@ const Navbar: React.FC = () => {
     };
   }, [isOpen]);
 
-
-  
-
   return (
     <nav className={`fixed left-0 right-0 z-40 transition-all duration-700 ease-out ${
       isScrolled ? 'top-4' : 'top-0'
     }`}>
-      <div className={`backdrop-blur-md bg-slate-950/70 border-b border-white/10 transition-all duration-700 ease-out ${
-        isScrolled ? 'rounded-full mx-auto max-w-6xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] border' : 'rounded-none'
+      <div className={`backdrop-blur-md bg-slate-950/70 border-b border-white/10 ${
+        isOpen ? '' : 'transition-all duration-700 ease-out'
+      } ${
+        isScrolled && !isOpen ? 'rounded-full mx-auto max-w-6xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] border' : 'rounded-none'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 

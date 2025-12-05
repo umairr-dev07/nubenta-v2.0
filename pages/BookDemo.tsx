@@ -5,8 +5,24 @@ import { Calendar, Users, Phone, Mail, Facebook, Instagram, Linkedin, Twitter } 
 const BookDemo: React.FC = () => {
   return (
     <div className="min-h-screen pt-32 pb-20 relative overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-[#0a0a0f] to-black">
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-20"
+        >
+          <source src="/booking-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
+      </div>
+
       {/* Mesh Grid Background */}
-      <div className="absolute inset-0 bg-grid-pattern z-0 pointer-events-none" />
+      <div className="absolute inset-0 bg-grid-pattern z-0 pointer-events-none opacity-30" />
 
       {/* Floating Elements */}
       <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none z-0" />
