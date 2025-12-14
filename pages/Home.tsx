@@ -126,56 +126,43 @@ const Home: React.FC = () => {
                 />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 relative z-10">
               
               {/* Step 1: Input */}
-              <div className="flex flex-col items-center group">
+              <div className="flex flex-col items-center group relative">
                 <div className="relative w-24 h-24 mb-6">
                     {/* Background Glow */}
                     <div className="absolute inset-0 bg-slate-400/20 rounded-2xl blur-xl animate-pulse z-0" />
-
-                    {/* Vertical Line for Mobile */}
-                    <div className="md:hidden absolute bottom-[-50px] left-1/2 w-[2px] h-[50px] bg-slate-800 -translate-x-1/2">
-                         <div className="absolute top-0 left-0 w-full h-1/2 bg-neon-blue animate-pulse" />
-                    </div>
 
                     <div className="w-full h-full rounded-2xl bg-slate-900 border border-white/20 flex items-center justify-center shadow-[0_0_30px_rgba(255,255,255,0.05)] relative z-10 group-hover:border-white transition-colors">
                         <Database className="w-10 h-10 text-slate-400 group-hover:text-white transition-colors animate-[pulse_3s_ease-in-out_infinite]" />
                     </div>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">Input</h3>
-                <p className="text-center text-sm text-slate-400 px-4">Raw Market Data & <br/>Lead Lists</p>
+                
+                <h3 className="text-xl font-bold text-white mb-2 mt-2">Input</h3>
+                <p className="text-center text-sm md:text-sm text-slate-400 px-4 leading-relaxed">Raw Market Data & Lead Lists</p>
               </div>
 
               {/* Step 2: Processing (The Brain) */}
-              <div className="flex flex-col items-center group">
+              <div className="flex flex-col items-center group relative">
                  <div className="relative w-24 h-24 mb-6">
                     {/* Background Glow */}
                     <div className="absolute inset-0 bg-neon-purple/30 rounded-full blur-xl animate-pulse z-0" />
-
-                    {/* Vertical Line for Mobile */}
-                    <div className="md:hidden absolute bottom-[-50px] left-1/2 w-[2px] h-[50px] bg-slate-800 -translate-x-1/2">
-                         <div className="absolute top-0 left-0 w-full h-1/2 bg-neon-purple animate-pulse" />
-                    </div>
 
                     <div className="w-full h-full rounded-full bg-slate-900 border-2 border-neon-purple/50 flex items-center justify-center shadow-[0_0_50px_rgba(176,38,255,0.4)] relative z-10">
                         <BrainCircuit className="w-10 h-10 text-neon-purple animate-[spin_10s_linear_infinite]" />
                     </div>
                  </div>
-                 <h3 className="text-xl font-bold text-white mb-2">Analysis</h3>
-                 <p className="text-center text-sm text-slate-400 px-4">Deep Learning & <br/>Strategy Formulation</p>
+                 
+                 <h3 className="text-xl font-bold text-white mb-2 mt-2">Analysis</h3>
+                 <p className="text-center text-sm md:text-sm text-slate-400 px-4 leading-relaxed">Deep Learning & Strategy Formulation</p>
               </div>
 
               {/* Step 3: Execution */}
-              <div className="flex flex-col items-center group">
+              <div className="flex flex-col items-center group relative">
                 <div className="relative w-24 h-24 mb-6 flex items-center justify-center">
                     {/* Background Glow */}
                     <div className="absolute inset-0 bg-blue-500/30 rounded-full blur-xl animate-pulse z-0" />
-
-                    {/* Vertical Line for Mobile */}
-                    <div className="md:hidden absolute bottom-[-50px] left-1/2 w-[2px] h-[50px] bg-slate-800 -translate-x-1/2">
-                         <div className="absolute top-0 left-0 w-full h-1/2 bg-blue-500 animate-pulse" />
-                    </div>
 
                     {/* Dual Action Icons */}
                     <div className="absolute left-0 top-2 w-14 h-14 rounded-xl bg-slate-900 border border-blue-500/50 flex items-center justify-center z-10 animate-[float_4s_ease-in-out_infinite]">
@@ -185,12 +172,13 @@ const Home: React.FC = () => {
                         <Phone className="w-6 h-6 text-cyan-400" />
                     </div>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">Execution</h3>
-                <p className="text-center text-sm text-slate-400 px-4">Autonomous Posting & <br/>Cold Calling</p>
+                
+                <h3 className="text-xl font-bold text-white mb-2 mt-2">Execution</h3>
+                <p className="text-center text-sm md:text-sm text-slate-400 px-4 leading-relaxed">Autonomous Posting & Cold Calling</p>
               </div>
 
               {/* Step 4: Output */}
-              <div className="flex flex-col items-center group">
+              <div className="flex flex-col items-center group relative">
                 <div className="relative w-24 h-24 mb-6">
                     {/* Background Glow */}
                     <div className="absolute inset-0 bg-green-500/30 rounded-2xl blur-xl animate-pulse z-0" />
@@ -200,8 +188,8 @@ const Home: React.FC = () => {
                         <TrendingUp className="w-10 h-10 text-green-400 animate-pulse" />
                     </div>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">Result</h3>
-                <p className="text-center text-sm text-slate-400 px-4">Revenue Growth & <br/>Brand Authority</p>
+                <h3 className="text-xl font-bold text-white mb-2 mt-2">Result</h3>
+                <p className="text-center text-sm md:text-sm text-slate-400 px-4 leading-relaxed">Revenue Growth & Brand Authority</p>
               </div>
 
             </div>

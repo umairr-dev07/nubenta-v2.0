@@ -76,8 +76,8 @@ const Pricing: React.FC = () => {
                             ))}
                         </ul>
                         
-                        <div className="pt-6 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                            <div className="flex flex-col gap-2">
+                        <div className="pt-6 flex flex-col sm:flex-row items-center sm:items-center gap-6">
+                            <div className="flex flex-col gap-2 items-center sm:items-start">
                                 <span className="text-lg text-slate-400">Contact for Pricing & Details</span>
                                 <a href="tel:+15204426528" className="flex items-center gap-2 text-2xl font-semibold text-white hover:text-purple-400 transition-colors">
                                     <Phone className="w-6 h-6" />
@@ -138,8 +138,8 @@ const Pricing: React.FC = () => {
                             ))}
                         </ul>
                         
-                         <div className="pt-6 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                            <div className="flex flex-col gap-2">
+                         <div className="pt-6 flex flex-col sm:flex-row items-center sm:items-center gap-6">
+                            <div className="flex flex-col gap-2 items-center sm:items-start">
                                 <span className="text-lg text-slate-400">Contact for Pricing & Details</span>
                                 <a href="tel:+15204426528" className="flex items-center gap-2 text-2xl font-semibold text-white hover:text-blue-400 transition-colors">
                                     <Phone className="w-6 h-6" />
