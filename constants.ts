@@ -3,7 +3,7 @@ import { Product, NavItem, Company } from './types';
 
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Home', path: '/' },
-  { label: 'Products', path: '/pricing' },
+  { label: 'AI Employees', path: '/beeba' },
   { label: 'About Us', path: '/about' },
 ];
 

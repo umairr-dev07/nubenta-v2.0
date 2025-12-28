@@ -55,7 +55,8 @@ const Footer = () => {
             <h4 className="text-white font-semibold mb-4 uppercase tracking-wider">Company</h4>
             <ul className="space-y-2">
               <li><NavLink to="/about" className="text-slate-400 hover:text-neon-purple transition-colors">About Us</NavLink></li>
-              <li><NavLink to="/pricing" className="text-slate-400 hover:text-neon-purple transition-colors">Products</NavLink></li>
+              <li><NavLink to="/beeba" className="text-slate-400 hover:text-neon-purple transition-colors">Beeba</NavLink></li>
+              <li><NavLink to="/genie" className="text-slate-400 hover:text-neon-purple transition-colors">Genie</NavLink></li>
               <li><NavLink to="/book-demo" className="text-slate-400 hover:text-neon-purple transition-colors">Book Demo</NavLink></li>
             </ul>
           </div>

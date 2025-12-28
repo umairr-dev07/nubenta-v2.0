@@ -4,9 +4,10 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CursorTrail from './components/CursorTrail';
 import Home from './pages/Home';
-import Pricing from './pages/Pricing';
 import About from './pages/About';
 import BookDemo from './pages/BookDemo';
+import Beeba from './pages/Beeba';
+import Genie from './pages/Genie';
 
 // Scroll to top wrapper
 const ScrollToTop = () => {
@@ -27,9 +28,10 @@ const App: React.FC = () => {
         <main className="relative z-10">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/pricing" element={<Pricing />} />
             <Route path="/about" element={<About />} />
             <Route path="/book-demo" element={<BookDemo />} />
+            <Route path="/beeba" element={<Beeba />} />
+            <Route path="/genie" element={<Genie />} />
           </Routes>
         </main>
         <Footer />
