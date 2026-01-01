@@ -159,12 +159,14 @@ const Beeba: React.FC = () => {
                             <p className="text-slate-300 leading-relaxed text-lg mb-6">
                                 Elevate your brand's visual identity with a workspace built for creators. Our platform empowers you to design stunning content while seamlessly managing your presence across all major social networks, from Instagram and TikTok to LinkedIn and Facebook. By centralizing your creative tools and publishing schedules, we help you maintain a buzzing, consistent brand voice that captures attention and drives engagement across the entire digital landscape.
                             </p>
-                            <NavLink to="/book-demo">
-                                <button className="group relative px-8 py-3 bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 border border-yellow-500/30 rounded-xl text-yellow-400 font-semibold overflow-hidden transition-all duration-300 hover:border-yellow-400 hover:shadow-[0_0_20px_rgba(234,179,8,0.3)]">
-                                    <span className="relative z-10">Learn More</span>
-                                    <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                                </button>
-                            </NavLink>
+                            <div className="flex justify-center lg:justify-start">
+                                <NavLink to="/book-demo">
+                                    <button className="group relative px-8 py-3 bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 border border-yellow-500/30 rounded-xl text-yellow-400 font-semibold overflow-hidden transition-all duration-300 hover:border-yellow-400 hover:shadow-[0_0_20px_rgba(234,179,8,0.3)]">
+                                        <span className="relative z-10">Learn More</span>
+                                        <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                                    </button>
+                                </NavLink>
+                            </div>
                         </div>
                         
                         {/* Video */}
@@ -199,9 +201,9 @@ const Beeba: React.FC = () => {
                         
                         <div className="w-full text-left">
                             <p className="text-slate-300 leading-relaxed text-lg mb-6">
-                            Success is better when it’s measurable. Watch your social proof skyrocket as our tools help you boost likes, comments, and shares across the board. Our vibrant interface tracks your most important metrics in real-time, providing a joyful look at how your brand is resonating with the world. Scale your impact and reach new milestones with a strategy built for maximum visibility and community excitement.
+                            Success is better when it's measurable. Watch your social proof skyrocket as our tools help you boost likes, comments, and shares across the board. Our vibrant interface tracks your most important metrics in real-time, providing a joyful look at how your brand is resonating with the world. Scale your impact and reach new milestones with a strategy built for maximum visibility and community excitement.
                             </p>
-                            <div className="mt-6">
+                            <div className="flex justify-center lg:justify-start">
                                 <NavLink to="/book-demo">
                                     <button className="group relative px-8 py-3 bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 border border-yellow-500/30 rounded-xl text-yellow-400 font-semibold overflow-hidden transition-all duration-300 hover:border-yellow-400 hover:shadow-[0_0_20px_rgba(234,179,8,0.3)]">
                                         <span className="relative z-10">Learn More</span>

@@ -9,6 +9,7 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
@@ -54,6 +55,18 @@ const Navbar: React.FC = () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [isDropdownOpen]);
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsOpen(false);
+    setIsDropdownOpen(false);
+    setIsMobileDropdownOpen(false);
+  }, [location.pathname]);
+
+  const handleMobileNavClick = () => {
+    setIsMobileDropdownOpen(false);
+    setIsOpen(false);
+  };
 
   return (
     <nav className={`fixed left-0 right-0 z-40 transition-all duration-700 ease-out ${
@@ -171,7 +184,7 @@ const Navbar: React.FC = () => {
                   return (
                     <div key={item.label}>
                       <button
-                        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                        onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
                         className={`w-full flex items-center justify-between px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
                           isAIEmployeePage
                             ? 'bg-slate-900 text-neon-blue'
@@ -179,16 +192,13 @@ const Navbar: React.FC = () => {
                         }`}
                       >
                         {item.label}
-                        <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
+                        <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${isMobileDropdownOpen ? 'rotate-180' : ''}`} />
                       </button>
-                      {isDropdownOpen && (
+                      {isMobileDropdownOpen && (
                         <div className="pl-4 mt-1 space-y-1">
                           <NavLink
                             to="/beeba"
-                            onClick={() => {
-                              setIsOpen(false);
-                              setIsDropdownOpen(false);
-                            }}
+                            onClick={handleMobileNavClick}
                             className={`block px-3 py-2 rounded-md hover:bg-slate-800 transition-colors ${
                               location.pathname === '/beeba' ? 'bg-slate-800' : ''
                             }`}
@@ -200,10 +210,7 @@ const Navbar: React.FC = () => {
                           </NavLink>
                           <NavLink
                             to="/genie"
-                            onClick={() => {
-                              setIsOpen(false);
-                              setIsDropdownOpen(false);
-                            }}
+                            onClick={handleMobileNavClick}
                             className={`block px-3 py-2 rounded-md hover:bg-slate-800 transition-colors ${
                               location.pathname === '/genie' ? 'bg-slate-800' : ''
                             }`}

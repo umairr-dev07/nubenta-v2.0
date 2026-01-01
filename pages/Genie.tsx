@@ -159,12 +159,14 @@ const Genie: React.FC = () => {
                             <p className="text-slate-300 leading-relaxed text-lg mb-6">
                                 Stop wasting time on manual data entry and let automation drive your sales pipeline. Our intelligent system seamlessly moves every prospect through a professional workflow—from the initial Lead Source and Data Enrichment to Customer Conversations and Lead Qualification. By automating CRM updates and Follow-up scheduling, we ensure your sales team stays focused on what they do best: building relationships and closing deals. Experience a smoother, faster way to grow your business without the administrative headache.
                             </p>
-                            <NavLink to="/book-demo">
-                                <button className="group relative px-8 py-3 bg-gradient-to-r from-cyan-500/10 to-cyan-600/10 border border-cyan-500/30 rounded-xl text-cyan-400 font-semibold overflow-hidden transition-all duration-300 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(6,182,212,0.3)]">
-                                    <span className="relative z-10">Learn More</span>
-                                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-cyan-600/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                                </button>
-                            </NavLink>
+                            <div className="flex justify-center lg:justify-start">
+                                <NavLink to="/book-demo">
+                                    <button className="group relative px-8 py-3 bg-gradient-to-r from-cyan-500/10 to-cyan-600/10 border border-cyan-500/30 rounded-xl text-cyan-400 font-semibold overflow-hidden transition-all duration-300 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(6,182,212,0.3)]">
+                                        <span className="relative z-10">Learn More</span>
+                                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-cyan-600/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                                    </button>
+                                </NavLink>
+                            </div>
                         </div>
                         
                         {/* Video */}
@@ -201,7 +203,7 @@ const Genie: React.FC = () => {
                             <p className="text-slate-300 leading-relaxed text-lg mb-6">
                                 Finding your next big opportunity shouldn't feel like a roll of the dice. Our intelligent assistant simplifies the prospecting process by identifying and organizing high-value potential clients for your business. With a clear, interactive interface, you can qualify leads, track outreach progress, and manage your sales pipeline with magical efficiency. Let our smart technology do the vetting so you can focus on closing deals and building meaningful professional relationships.
                             </p>
-                            <div className="mt-6">
+                            <div className="flex justify-center lg:justify-start">
                                 <NavLink to="/book-demo">
                                     <button className="group relative px-8 py-3 bg-gradient-to-r from-cyan-500/10 to-cyan-600/10 border border-cyan-500/30 rounded-xl text-cyan-400 font-semibold overflow-hidden transition-all duration-300 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(6,182,212,0.3)]">
                                         <span className="relative z-10">Learn More</span>
